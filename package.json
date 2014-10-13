@@ -1,0 +1,29 @@
+{
+  "name": "print-url",
+  "version": "1.0.0",
+  "description": "Get the contents of URL and print it with LP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wankdanker/node-print-url.git"
+  },
+  "keywords": [
+    "print",
+    "html",
+    "url",
+    "lp"
+  ],
+  "author": "Dan VerWeire",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wankdanker/node-print-url/issues"
+  },
+  "homepage": "https://github.com/wankdanker/node-print-url",
+  "dependencies": {
+    "html-pdf": "^0.2.1",
+    "lp-client": "git://github.com/wankdanker/node-lp.git"
+  }
+}
