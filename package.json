@@ -1,6 +1,6 @@
 {
   "name": "print-url",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Get the contents of URL and print it with LP",
   "main": "index.js",
   "scripts": {
