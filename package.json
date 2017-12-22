@@ -24,7 +24,7 @@
   "homepage": "https://github.com/wankdanker/node-print-url",
   "dependencies": {
     "html-pdf": "^0.2.1",
-    "lp-client": "git://github.com/wankdanker/node-lp.git",
+    "node-lp": "^1.0.0",
     "request": "^2.45.0"
   }
 }

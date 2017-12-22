@@ -1,4 +1,4 @@
-var Printer = require('lp-client')
+var Printer = require('node-lp')
 	, pdf = require('html-pdf')
 	, request = require('request')
 	;
