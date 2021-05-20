@@ -1,10 +1,19 @@
 var Printer = require('node-lp')
 	, pdf = require('html-pdf')
-	, request = require('request')
+	, axios = require('axios')
 	;
 
 module.exports = print;
 
+/**
+ *
+ *
+ * @param {Object|String} [options]
+ * @param {String} options.url
+ * @param {String} options.printer
+ * @param {Function} cb
+ * @returns
+ */
 function print(options, cb) {
 	if (typeof options === 'function') {
 		cb = options;
@@ -25,12 +34,8 @@ function print(options, cb) {
 		return cb && cb(new Eror('options.url is required'));
 	}
 
-	request(options.url, function (err, response, body) {
-		if (err) {
-			return cb(err);
-		}
-
-		pdf.create(body, options.page, function (err, buffer) {
+	axios(options.url).then(function (response) {
+		pdf.create(response.data, options.page).toBuffer(function (err, buffer) {
 			if (err) {
 				return cb(err);
 			}
@@ -39,5 +44,5 @@ function print(options, cb) {
 
 			lp.queue(buffer, cb);
 		});
-	});
+	}).catch(cb);
 }
